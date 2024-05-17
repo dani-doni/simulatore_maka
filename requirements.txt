@@ -2,7 +2,7 @@ pandas
 streamlit
 numpy
 streamlit_authenticator
-google.cloud
+google-cloud-firestore
 gspread
 google-auth
 st-gsheets-connection
