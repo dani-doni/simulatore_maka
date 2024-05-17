@@ -1,13 +1,13 @@
 # streamlit_app.py
 
 import streamlit as st
-from streamlit_gsheets import GSheetsConnection
 
 # Create a connection object.
-conn = st.connection("gsheets", type=GSheetsConnection)
+conn = st.connection("firestore")
+conn
 
-df = conn.read(
-    worksheet="results",
-)
+import firebase_admin
+from firebase_admin import credentials
 
-df
+cred = credentials.Certificate(conn)
+firebase_admin.initialize_app(cred)
