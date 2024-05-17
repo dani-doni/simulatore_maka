@@ -1,6 +1,5 @@
 import streamlit as st
 import json
-from google.cloud import firestore
 
 key_dict = json.loads(st.secrets["textkey"])
 key_dict
