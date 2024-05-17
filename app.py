@@ -5,7 +5,7 @@ from firebase_admin import credentials
 from google.cloud import firestore
 key_dict = json.loads(st.secrets["textkey"])
 cred = credentials.Certificate(key_dict)
-db = firestore.Client(credentials=creds, project="maka")
+db = firestore.Client(credentials=cred, project="maka")
 
 
 
