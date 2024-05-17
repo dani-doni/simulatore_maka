@@ -1,7 +1,7 @@
-# streamlit_app.py
-
 import streamlit as st
 import json
+from google.cloud import firestore
+
 key_dict = json.loads(st.secrets["textkey"])
 key_dict
 creds = service_account.Credentials.from_service_account_info(key_dict)
