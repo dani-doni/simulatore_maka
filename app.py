@@ -1,13 +1,13 @@
 # streamlit_app.py
 
 import streamlit as st
+import json
+key_dict = json.loads(st.secrets["firestore"])
+creds = service_account.Credentials.from_service_account_info(key_dict)
+db = firestore.Client(credentials=creds, project="maka")
 
-# Create a connection object.
-conn = st.connection("firestore")
-conn
+performance = db.collection("performance")
 
-import firebase_admin
-from firebase_admin import credentials
-
-cred = credentials.Certificate(conn)
-firebase_admin.initialize_app(cred)
+for p in performance.stream():
+	st.write("The start is: ", p.start)
+	st.write("The finish is: ", p.finish)
