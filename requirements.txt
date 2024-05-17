@@ -3,6 +3,7 @@ streamlit
 numpy
 streamlit_authenticator
 google-cloud-firestore
+firebase-admin
 gspread
 google-auth
 st-gsheets-connection
